@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+
+.events{
+}
+
+.event{
+	height: 220px;
+}
+
+.eventImage{
+	max-height: 100%;
+	float: left;
+	margin-right: 10px;
+}
+
+.eventTitle{
+	text-decoration: none;
+	font-size: 17px;
+	padding-top: 10px;
+	display: inline-block;
+}
+
+.eventInfo{
+	font-size: 11px;
+	margin-bottom: 3px;
+	padding-right: 10px;
+	height: 15px;
+}
+
+.eventDescription{
+	height: 160px;
+	padding-right: 10px;
+	overflow: hidden;
+	text-align: justify;	
+}
+
+.eventDate{
+	float: left;
+}
+
+.eventPlace{
+	color:#333;
+	text-decoration:underline;
+	float: right;
+}

@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+
+.event{
+}
+
+.eventImage{
+	width: 100%;
+}
+
+.eventContent{
+	padding: 10px;
+}
+
+.eventTitle{
+	margin-bottom: 0px;
+}
+
+.eventInfo{
+	margin-bottom: 5px;
+}
+
+.eventInfo a{
+	text-decoration:underline;
+}
+
+.eventDesc{
+	text-align:justify;
+}

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+		<field name="id" type="text" default="0" 
+		    label="COM_EVENTSHANDLER_FORM_LBL_EVENT_ID"
+            readonly="true" 
+            class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_EVENTSHANDLER_FORM_LBL_EVENT_CREATED_BY"
+            description="COM_EVENTSHANDLER_FORM_DESC_EVENT_CREATED_BY"  /> 
+
+       <field name="name" type="text"   
+            label="COM_EVENTSHANDLER_FORM_LBL_EVENT_NAME"
+            description="COM_EVENTSHANDLER_FORM_DESC_EVENT_NAME" 
+            required="true" 
+            filter="safehtml"
+            maxlength="255" /> 
+            
+       <field name="alias" type="hidden"  
+            filter="safehtml"/> 
+
+       <field name="description" type="textarea"    
+            label="COM_EVENTSHANDLER_FORM_LBL_EVENT_DESCRIPTION"
+            description="COM_EVENTSHANDLER_FORM_DESC_EVENT_DESCRIPTION" 
+            required="true" 
+            cols="200"
+            rows="10"
+            filter="safehtml" /> 
+
+       <field name="date" type="calendar"
+			label="COM_EVENTSHANDLER_FORM_LBL_EVENT_DATE"
+            description="COM_EVENTSHANDLER_FORM_DESC_EVENT_DATE" 
+            required="true" 
+            filter="safehtml"
+            format="%d-%m-%Y" /> 
+
+       <field name="start_time" type="text"   
+            label="COM_EVENTSHANDLER_FORM_LBL_EVENT_START_TIME"
+            description="COM_EVENTSHANDLER_FORM_DESC_EVENT_START_TIME" 
+            default="0:00:00"  
+            filter="safehtml"
+            maxlength="128" /> 
+
+       <field name="end_time" type="text" 
+            label="COM_EVENTSHANDLER_FORM_LBL_EVENT_END_TIME"
+            description="COM_EVENTSHANDLER_FORM_DESC_EVENT_END_TIME" 
+            default="0:00:00" 
+            filter="safehtml"
+            maxlength="128" /> 
+
+       <field name="image" type="media"     
+            label="COM_EVENTSHANDLER_FORM_LBL_EVENT_IMAGE"
+            description="COM_EVENTSHANDLER_FORM_DESC_EVENT_IMAGE"/> 
+           
+      	<field name="big_image" type="media"     
+            label="COM_EVENTSHANDLER_FORM_LBL_EVENT_BIG_IMAGE"
+            description="COM_EVENTSHANDLER_FORM_DESC_EVENT_BIG_IMAGE"/> 
+
+       <field name="link_fb" type="text"         
+            label="COM_EVENTSHANDLER_FORM_LBL_EVENT_LINK_FB"
+            description="COM_EVENTSHANDLER_FORM_DESC_EVENT_LINK_FB" 
+			required="false" 
+            filter="safehtml"/> 
+            
+		<field name="place_id" type="place"
+		    label="COM_EVENTSHANDLER_FORM_LBL_EVENT_PLACE"
+            description="COM_EVENTSHANDLER_FORM_DESC_EVENT_PLACE" 
+			required="false" 
+            filter="safehtml"/>
+		
+		<field name="special_id" type="special"
+		    label="COM_EVENTSHANDLER_FORM_LBL_EVENT_SPECIAL"
+            description="COM_EVENTSHANDLER_FORM_DESC_EVENT_SPECIAL" 
+			required="false" 
+            filter="safehtml"/>
+       
+		<field
+	        name="state"
+	        type="list"
+	        label="JSTATUS"
+	        description="JFIELD_PUBLISHED_DESC"
+	        class="inputbox"
+	        size="1"
+	        default="1">
+		        <option value="1">JPUBLISHED</option>
+		        <option value="0">JUNPUBLISHED</option>
+    	</field> 
+    	
+		<field name="tags" type="tag"
+		    label="JTAG"
+            description="JTAG_DESC" 
+			required="false" 
+            filter="safehtml"
+            mode="ajax"
+            multiple="true"/>
+
+        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

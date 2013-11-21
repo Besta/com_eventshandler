@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+		<field name="id" type="text" default="0" 
+		    label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_ID"
+            readonly="true" 
+            class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_CREATED_BY"
+            description="COM_EVENTSHANDLER_FORM_DESC_SPECIAL_CREATED_BY"  /> 
+
+       <field name="name" type="text"   
+            label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_NAME"
+            description="COM_EVENTSHANDLER_FORM_DESC_SPECIAL_NAME" 
+            filter="safehtml"
+            maxlength="255" /> 
+            
+       <field name="logo" type="media"     
+            label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_LOGO"
+            description="COM_EVENTSHANDLER_FORM_DESC_SPECIAL_LOGO"/> 
+            
+       <field name="alias" type="hidden"  
+            filter="safehtml"/> 
+
+       <field name="description" type="editor"    
+            label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_DESCRIPTION"
+            description="COM_EVENTSHANDLER_FORM_DESC_SPECIAL_DESCRIPTION" 
+            cols="200"
+            rows="10"
+            filter="safehtml" /> 
+
+       <field name="image" type="media"     
+            label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_IMAGE"
+            description="COM_EVENTSHANDLER_FORM_DESC_SPECIAL_IMAGE"/> 
+
+       <field name="link_fb" type="text"         
+            label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_LINK_FB"
+            description="COM_EVENTSHANDLER_FORM_DESC_SPECIAL_LINK_FB" 
+            filter="safehtml"
+            maxlength="255" /> 
+            
+       <field name="color1" type="color"         
+            label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_COLOR_1"
+            description="COM_EVENTSHANDLER_FORM_DESC_SPECIAL_COLOR_1" 
+            filter="safehtml"
+            maxlength="50" /> 
+         
+       <field name="color2" type="color"         
+            label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_COLOR_2"
+            description="COM_EVENTSHANDLER_FORM_DESC_SPECIAL_COLOR_2" 
+            filter="safehtml"
+            maxlength="50" />
+       
+        <field name="color3" type="color"         
+            label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_COLOR_3"
+            description="COM_EVENTSHANDLER_FORM_DESC_SPECIAL_COLOR_3" 
+            filter="safehtml"
+            maxlength="50" />
+       
+		<field
+	        name="state"
+	        type="list"
+	        label="JSTATUS"
+	        description="JFIELD_PUBLISHED_DESC"
+	        class="inputbox"
+	        size="1"
+	        default="1">
+		        <option value="1">JPUBLISHED</option>
+		        <option value="0">JUNPUBLISHED</option>
+    	</field> 
+    	
+		<field
+	        name="day"
+	        type="list"
+	        label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_DAY"
+	        description="COM_EVENTSHANDLER_FORM_DESC_SPECIAL_DAY"
+	        class="inputbox">
+		        <option value="0">JGLOBAL_SELECT_AN_OPTION</option>
+		        <option value="1">MONDAY</option>
+		        <option value="2">TUESDAY</option>
+		        <option value="3">WEDNESDAY</option>
+		        <option value="4">THURSDAY</option>
+		        <option value="5">FRIDAY</option>
+		        <option value="6">SATURDAY</option>
+		        <option value="7">SUNDAY</option>
+    	</field> 
+    	
+
+        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

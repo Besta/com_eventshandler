@@ -51,6 +51,10 @@ class EventshandlerViewEvents extends JViewLegacy
         $this->color2		= $this->params->get('color2');
         $this->color3		= $this->params->get('color3');
        
+        if($this->params->get('eventsorientation')==0)
+        	$this->orientation	="_vert";
+        else
+        	$this->orientation	="";
         
         parent::display($tpl);
         

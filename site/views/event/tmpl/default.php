@@ -12,14 +12,18 @@ defined('_JEXEC') or die;
 //Load admin language file
 $lang = JFactory::getLanguage();
 $lang->load('com_eventshandler', JPATH_ADMINISTRATOR);
+$helperDir = JPATH_SITE . DIRECTORY_SEPARATOR. "components" . DIRECTORY_SEPARATOR ."com_eventshandler". DIRECTORY_SEPARATOR . "helpers";
+JLoader::register("EventshandlerHelper", $helperDir . DIRECTORY_SEPARATOR . "eventshandler.php");
+JLoader::register("EventshandlerHelperRoute", $helperDir . DIRECTORY_SEPARATOR . "route.php");
+
 
 ?>
 <?php if ($this->item){ 
 	$info='';
 	if($this->special!=null)
-		$info.='| '.JText::_('COM_EVENTSHANDLER_SPECIAL').': <a style="color:'.$this->color3.'" href="'.JRoute::_('index.php?option=com_eventshandler&view=events&special=' . (int)$this->special->id).'-'.$this->special->alias.'">'.$this->special->name.'</a> ';
+		$info.='| '.JText::_('COM_EVENTSHANDLER_SPECIAL').': <a style="color:'.$this->color3.'" href="'.JRoute::_(EventshandlerHelperRoute::getEventsRoute().'&special='.(int)$this->special->id.'-'.$this->special->alias).'">'.$this->special->name.'</a> ';
 	if($this->place!=null)
-		$info.='| '.JText::_('COM_EVENTSHANDLER_PLACE').': <a style="color:'.$this->color3.'" href="'.JRoute::_('index.php?option=com_eventshandler&view=events&place=' . (int)$this->place->id).'-'.$this->place->alias.'">'.$this->place->name.'</a> ';
+		$info.='| '.JText::_('COM_EVENTSHANDLER_PLACE').': <a style="color:'.$this->color3.'" href="'.JRoute::_(EventshandlerHelperRoute::getEventsRoute().'&place=' . (int)$this->place->id.'-'.$this->place->alias).'">'.$this->place->name.'</a> ';
 	if($this->item->date!=null)
 		$info.='| '.JText::_('COM_EVENTSHANDLER_DATE').': '.$this->item->date.' ';
 	if($this->item->start_time!='0:00:00')

@@ -50,7 +50,17 @@ class EventshandlerViewSpecial extends JViewLegacy {
                 throw new Exception(JText::_('JERROR_ALERTNOAUTHOR'));
             }
         }
-        
+        $this->color1		= $this->params->get('color1');
+        $this->color2		= $this->params->get('color2');
+        $this->color3		= $this->params->get('color3');
+        $logo='';
+        if($this->item->color1)
+        	$this->color1=$this->item->color1;
+        if($this->item->color2)
+        	$this->color2=$this->item->color2;
+        if($this->item->color3)
+        	$this->color3=$this->item->color3;
+
         $this->_prepareDocument();
 
         parent::display($tpl);

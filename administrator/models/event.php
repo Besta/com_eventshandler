@@ -11,6 +11,7 @@
 defined('_JEXEC') or die;
 
 jimport('joomla.application.component.modeladmin');
+jimport( 'joomla.utilities.date' );
 
 /**
  * Eventshandler model.
@@ -28,7 +29,17 @@ class EventshandlerModelEvent extends JModelAdmin
 	 **/
 	public function save($data){
 		$data['alias']=JFilterOutput::stringURLSafe($data['name']);
+
+		$data['link_fb']=$this->createLink($data['link_fb']);
+		$data['link_tw']=$this->createLink($data['link_tw']);
+		$data['link_yt']=$this->createLink($data['link_yt']);
 		return parent::save($data);
+	}
+	
+	private function createLink($url){
+		if($url!=null && $url!='' && trim(substr($url, 0,7))!="http://")
+			$url='http://'.$url;
+		return $url;
 	}
 	
 	/**

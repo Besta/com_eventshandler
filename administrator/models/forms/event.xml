@@ -22,7 +22,7 @@
        <field name="alias" type="hidden"  
             filter="safehtml"/> 
 
-       <field name="description" type="textarea"    
+       <field name="description" type="editor"    
             label="COM_EVENTSHANDLER_FORM_LBL_EVENT_DESCRIPTION"
             description="COM_EVENTSHANDLER_FORM_DESC_EVENT_DESCRIPTION" 
             required="true" 
@@ -33,9 +33,10 @@
        <field name="date" type="calendar"
 			label="COM_EVENTSHANDLER_FORM_LBL_EVENT_DATE"
             description="COM_EVENTSHANDLER_FORM_DESC_EVENT_DATE" 
+            default="00-00-0000"
             required="true" 
             filter="safehtml"
-            format="%d-%m-%Y" /> 
+            format="%Y-%m-%d" /> 
 
        <field name="start_time" type="text"   
             label="COM_EVENTSHANDLER_FORM_LBL_EVENT_START_TIME"
@@ -63,8 +64,20 @@
             label="COM_EVENTSHANDLER_FORM_LBL_EVENT_LINK_FB"
             description="COM_EVENTSHANDLER_FORM_DESC_EVENT_LINK_FB" 
 			required="false" 
+            filter="safehtml"/>
+        
+ 		<field name="link_tw" type="text"         
+            label="COM_EVENTSHANDLER_FORM_LBL_EVENT_LINK_TW"
+            description="COM_EVENTSHANDLER_FORM_DESC_EVENT_LINK_TW" 
+			required="false" 
             filter="safehtml"/> 
             
+         <field name="link_yt" type="text"         
+            label="COM_EVENTSHANDLER_FORM_LBL_EVENT_LINK_YT"
+            description="COM_EVENTSHANDLER_FORM_DESC_EVENT_LINK_YT" 
+			required="false" 
+            filter="safehtml"/> 
+ 		
 		<field name="place_id" type="place"
 		    label="COM_EVENTSHANDLER_FORM_LBL_EVENT_PLACE"
             description="COM_EVENTSHANDLER_FORM_DESC_EVENT_PLACE" 

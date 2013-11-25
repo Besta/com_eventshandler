@@ -20,7 +20,7 @@ JLoader::register("EventsHandlerHelperRoute", $helperDir . DIRECTORY_SEPARATOR .
 function EventshandlerBuildRoute(&$query)
 {	
  	$segments = array();
- 	//var_dump($query);
+
  	// get a menu item based on Itemid or currently active
  	$app  = JFactory::getApplication();
  	$menu = $app->getMenu();
@@ -43,7 +43,6 @@ function EventshandlerBuildRoute(&$query)
  		if (empty($query['Itemid']) OR ($mOption !== "com_eventshandler")) {
  			$segments[] = $query['view'];
  		}
-
  		// We need to keep the view for forms since they never have their own menu item
  		if ($view != 'form') {
  			unset($query['view']);
@@ -71,6 +70,11 @@ function EventshandlerBuildRoute(&$query)
 				unset($query['id']);
 	            unset($query['catid']);
 	            break;
+            case "special":
+            	unset($query['view']);
+            	unset($query['id']);
+            	unset($query['catid']);
+            	break;
  		}
  	}
  	

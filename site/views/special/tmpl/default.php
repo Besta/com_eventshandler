@@ -15,12 +15,8 @@ $lang->load('com_eventshandler', JPATH_ADMINISTRATOR);
 
 ?>
 <?php if ($this->item) { ?>
-	<div class="special" style="background-color:<?php echo $this->item->color1 ?>; color: <?php echo $this->item->color2 ?>">
+	<div class="special" style="background-color:<?php echo $this->color1 ?>; color: <?php echo $this->color2 ?>">
 		<img class="special_img" src="<?php echo $this->item->image ?>"/>
-		<?php 
-		if($this->item->logo) 
-			echo '<img class="special_logo" src="'.$this->item->logo.'"/>';
-		?>
 		<div class="special_content">
 			<?php echo $this->item->description ?>
 		</div>

@@ -5,41 +5,128 @@
 
 .event{
 	height: 220px;
+	margin-bottom:20px;
 }
 
-.eventImage{
-	max-height: 100%;
+.event_vert{
+	height: 568px;
+	margin: 1.5%;
+	width: 30%;
+	display: inline-block;
+	padding: inherit;
+
+}
+
+.event .image{
+	height: 100%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 24%;
 	float: left;
 	margin-right: 10px;
 }
+}
 
-.eventTitle{
+.event_vert .image{
+	height:300px;
+	width: 100%;
+	background-size: 100%;
+	background-repeat:no-repeat;
+}
+
+.event .logo{
+	height:40px;
+	margin:5px;
+	float:left;
+}
+.event_vert .logo{
+	height:40px;
+	margin:5px;
+}
+
+.event .title{
 	text-decoration: none;
 	font-size: 17px;
 	padding-top: 10px;
 	display: inline-block;
 }
 
-.eventInfo{
+.event_vert .title{
+	text-decoration: none;
+	font-size: 17px;
+	display: inline-block;
+	padding: 0px 10px;
+	padding-top:10px;
+}
+
+.event .info{
 	font-size: 11px;
 	margin-bottom: 3px;
 	padding-right: 10px;
 	height: 15px;
+	
 }
 
-.eventDescription{
-	height: 160px;
+.event_vert .info{
+	font-size: 11px;
+	margin-bottom: 3px;
+	padding: 0px 10px;
+	height: 15px;
+}
+
+.event .description{
+	height: 109px;
 	padding-right: 10px;
 	overflow: hidden;
 	text-align: justify;	
 }
 
-.eventDate{
+.event_vert .description{
+	height: 160px;
+	overflow: hidden;
+	text-align: justify;
+	padding: 0px 10px;	
+}
+
+.info .date{
 	float: left;
 }
 
-.eventPlace{
+.info .place{
 	color:#333;
 	text-decoration:underline;
 	float: right;
+}
+
+.social{
+	text-align:center;
+	height:60px;
+	display: inline-block;
+}
+
+.social a{
+	width:40px;
+	height:40px;
+	background-image: url('../images/social-icon.png');
+	background-size: 170px;
+	background-repeat: no-repeat;	
+	display:inline-block;
+	cursor:pointer;
+	margin: 10px;
+}
+
+.social a:hover{
+	background-image: url('../images/social-icon-plane.png');
+}
+
+.social .fb{
+	background-position: -88px 1px;
+}
+
+.social .tw{
+	background-position: 1px 1px;
+}
+
+.social .yt{
+	background-position: -43px 1px;
 }

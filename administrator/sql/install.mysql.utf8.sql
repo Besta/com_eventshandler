@@ -14,6 +14,8 @@ CREATE TABLE IF NOT EXISTS `#__eventshandler_events` (
 `end_time` VARCHAR(128)  NOT NULL ,
 `image` TEXT  NOT NULL ,
 `link_fb` TEXT NOT NULL ,
+`link_tw` TEXT NOT NULL ,
+`link_yt` TEXT NOT NULL ,
 `place_id` INT(11) NOT NULL ,
 `special_id` INT(11) NOT NULL ,
 PRIMARY KEY (`id`)
@@ -51,9 +53,12 @@ CREATE TABLE IF NOT EXISTS `#__eventshandler_specials` (
 `description` TEXT NOT NULL ,
 `image` TEXT  NOT NULL ,
 `link_fb` TEXT NOT NULL ,
-`color1` VARCHAR(50) NOT NULL ,
-`color2` VARCHAR(50) NOT NULL ,
-`color3` VARCHAR(50) NOT NULL ,
+`link_tw` TEXT NOT NULL ,
+`link_yt` TEXT NOT NULL ,
+`website` TEXT NOT NULL ,
+`color1` VARCHAR(50),
+`color2` VARCHAR(50) ,
+`color3` VARCHAR(50),
 PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8_general_ci;
 

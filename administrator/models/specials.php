@@ -151,5 +151,16 @@ class EventshandlerModelSpecials extends JModelList {
         
         return $items;
     }
+    
+	public function checkin($id){
+		$model = $this->getInstance( 'special', 'EventshandlerModel' );
+		return $model->checkin($id);
+    }
+    
+    public function publish($id,$state){
+    	$model = $this->getInstance( 'special', 'EventshandlerModel' );
+    	return $model->publish($id,$state);
+    }
+    
 
 }

@@ -194,5 +194,15 @@ class EventshandlerModelEvents extends JModelList {
         $items = parent::getItems(); 
         return $items;
     }
-
+	
+    public function checkin($id){
+    	$model = $this->getInstance( 'event', 'EventshandlerModel' );
+    	return $model->checkin($id);
+    }
+    
+    public function publish($id,$state){
+    	$model = $this->getInstance( 'event', 'EventshandlerModel' );
+    	return $model->publish($id,$state);
+    }
+    
 }

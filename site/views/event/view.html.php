@@ -88,9 +88,8 @@ class EventshandlerViewEvent extends JViewLegacy {
 				$this->color2=$special->color2;
 			if($special->color3)
 				$this->color3=$special->color3;
-			$this->special=$special;
 		}
-		
+		$this->special=$special;
 		$place=EventshandlerHelper::getPlace($this->item->place_id);
 		$this->place=$place;
 		// Add styles

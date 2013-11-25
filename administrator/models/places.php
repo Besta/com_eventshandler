@@ -10,6 +10,8 @@
 defined('_JEXEC') or die;
 
 jimport('joomla.application.component.modellist');
+jimport('joomla.application.component.controller');
+
 
 /**
  * Methods supporting a list of Eventshandler records.
@@ -151,6 +153,14 @@ class EventshandlerModelPlaces extends JModelList {
         return $items;
     }
     
+    public function checkin($id){
+		$model = $this->getInstance( 'place', 'EventshandlerModel' );
+		return $model->checkin($id);
+    }
     
-
+    public function publish($id,$state){
+    	$model = $this->getInstance( 'place', 'EventshandlerModel' );
+    	return $model->publish($id,$state);
+    }
+    
 }

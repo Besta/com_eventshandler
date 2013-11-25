@@ -44,7 +44,6 @@ $document->addStyleSheet('components/com_eventshandler/assets/css/eventshandler.
 </script>
 
 <form action="<?php echo JRoute::_('index.php?option=com_eventshandler&layout=edit&id=' . (int) $this->item->id); ?>" method="post" enctype="multipart/form-data" name="adminForm" id="special-form" class="form-validate">
-   
     <div class="form-horizontal">
 			<div class="span12">
 				<div class="row-fluid form-horizontal-desktop">
@@ -87,6 +86,18 @@ $document->addStyleSheet('components/com_eventshandler/assets/css/eventshandler.
 						<div class="control-group">
 							<div class="control-label"><?php echo $this->form->getLabel('link_fb'); ?></div>
 							<div class="controls"><?php echo $this->form->getInput('link_fb'); ?></div>
+						</div>
+						<div class="control-group">
+							<div class="control-label"><?php echo $this->form->getLabel('link_tw'); ?></div>
+							<div class="controls"><?php echo $this->form->getInput('link_tw'); ?></div>
+						</div>
+						<div class="control-group">
+							<div class="control-label"><?php echo $this->form->getLabel('link_yt'); ?></div>
+							<div class="controls"><?php echo $this->form->getInput('link_yt'); ?></div>
+						</div>
+						<div class="control-group">
+							<div class="control-label"><?php echo $this->form->getLabel('website'); ?></div>
+							<div class="controls"><?php echo $this->form->getInput('website'); ?></div>
 						</div>
 		        		<div class="control-group">
 							<div class="control-label"><?php echo $this->form->getLabel('color1'); ?></div>

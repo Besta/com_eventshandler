@@ -11,6 +11,7 @@ defined('_JEXEC') or die;
 
 $helperDir = JPATH_SITE . DIRECTORY_SEPARATOR. "components" . DIRECTORY_SEPARATOR ."com_eventshandler". DIRECTORY_SEPARATOR . "helpers";
 JLoader::register("EventshandlerHelper", $helperDir . DIRECTORY_SEPARATOR . "eventshandler.php");
+JLoader::register("EventshandlerHelperRoute", $helperDir . DIRECTORY_SEPARATOR . "route.php");
 
 
 ?>
@@ -25,14 +26,17 @@ JLoader::register("EventshandlerHelper", $helperDir . DIRECTORY_SEPARATOR . "eve
 
 <?php 
 $show = false;
+$app		= JFactory::getApplication();
+$menus		= $app->getMenu('site');
+$component	= JComponentHelper::getComponent('com_eventshandler');
 
-?>
-        <?php foreach ($this->items as $item) { 
+ foreach ($this->items as $item) { 
         	$color1		= $this->params->get('color1');
         	$color2		= $this->params->get('color2');
         	$color3		= $this->params->get('color3');
         	$special=null;
         	$special=EventshandlerHelper::getSpecial($item->special_id);
+        	$logo='';
         	if($special){
         		if($special->color1)
         			$color1=$special->color1;
@@ -40,35 +44,47 @@ $show = false;
         			$color2=$special->color2;
         		if($special->color3)
         			$color3=$special->color3;
-			}?>          
-				<?php
-					if($item->state == 1 || ($item->state == 0 && JFactory::getUser()->authorise('core.edit.own',' com_eventshandler'))){
+        		
+        		$specialLink=JRoute::_(EventshandlerHelperRoute::getSpecialRoute($special->id));
+        		if($special->logo!=null && $special->logo!="")
+        			$logo='<a href='.$specialLink.'><img src="'.$special->logo.'" class="logo"/></a>';
+        			
+			}
+			
+			$eventLink=JRoute::_('index.php?option=com_eventshandler&view=event&id='.(int)$item->id);
+			
+			if($item->state == 1 || ($item->state == 0 && JFactory::getUser()->authorise('core.edit.own',' com_eventshandler'))){
 						$show = true;?>
-						<div style="background-color:<?php echo $color1?>;color:<?php echo $color2?>;" class="event">
+						<div style="background-color:<?php echo $color1?>;color:<?php echo $color2?>;" class="event<?php echo $this->orientation;?>">
+							<div style="background-image:url('<?php echo $item->image;?>');"class="image">
+								<?php echo $logo ?>
+							</div>
 							<?php if($this->params->get('eventsdetails')){?>
-								<a href="<?php echo JRoute::_('index.php?option=com_eventshandler&view=event&id=' . (int)$item->id); ?>">
+								<a href="<?php echo $eventLink ?>">
 							<?php }?>	
-									<img class="eventImage" src="<?php echo $item->image;?>"/>
-									<span style="color:<?php echo $color2?>" class="eventTitle" ">
-										<b><?php
-											echo $item->name; 
-											?>
-										</b>
+									<span style="color:<?php echo $color2?>" class="title" ">
+										<b><?php echo $item->name; ?></b>
 									</span>
 							<?php if($this->params->get('eventsdetails')){?>
 								</a>
 							<?php }?>	
-							<div style="color:<?php echo $color3?>" class="eventInfo">
-								<span class="eventDate"><?php echo $item->start_time;?>-<?php echo $item->end_time;?> | <?php echo $item->date;?></span> 
-								<a style="color:<?php echo $color3?>" class="eventPlace" href="<?php echo JRoute::_('index.php?option=com_eventshandler&view=events&place='.(int)$item->place_id).'-'.$item->place_alias;?>">
-										<?php echo $item->place_name;?>
-								</a>
+							<div class="content">
+								<div style="color:<?php echo $color3?>" class="info">
+									<span class="date"><?php echo $item->start_time;?>-<?php echo $item->end_time;?> | <?php echo $item->date;?></span> 
+									<a style="color:<?php echo $color3?>" class="place" href="<?php echo JRoute::_('index.php?option=com_eventshandler&view=events&place='.(int)$item->place_id).'-'.$item->place_alias;?>">
+											<?php echo $item->place_name;?>
+									</a>
+								</div>
+								<div class="description">
+									<?php echo $item->description;?>
+								</div>
 							</div>
-							<div class="eventDescription">
-								<?php echo $item->description;?>
+							<div class="social">
+								<?php if ($item->link_fb){?><a href="<?php echo $item->link_fb ?>" class="fb"></a><?php } ?>
+								<?php if ($item->link_tw){?><a href="<?php echo $item->link_tw ?>" class="tw"></a><?php } ?>
+								<?php if ($item->link_yt){?><a href="<?php echo $item->link_yt ?>" class="yt"></a><?php } ?>
 							</div>
 						</div>
-						<div class="clearNoBorder"></div>
 					<?php } ?>
 
 <?php } ?>

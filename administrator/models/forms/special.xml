@@ -39,8 +39,22 @@
        <field name="link_fb" type="text"         
             label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_LINK_FB"
             description="COM_EVENTSHANDLER_FORM_DESC_SPECIAL_LINK_FB" 
-            filter="safehtml"
-            maxlength="255" /> 
+            filter="safehtml"/>
+       
+       <field name="link_tw" type="text"         
+            label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_LINK_TW"
+            description="COM_EVENTSHANDLER_FORM_DESC_SPECIAL_LINK_TW" 
+            filter="safehtml" />
+       
+       <field name="link_yt" type="text"         
+            label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_LINK_YT"
+            description="COM_EVENTSHANDLER_FORM_DESC_SPECIAL_LINK_YT" 
+            filter="safehtml"/>
+      
+        <field name="website" type="text"         
+            label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_WEBSITE"
+            description="COM_EVENTSHANDLER_FORM_DESC_SPECIAL_WEBSITE" 
+            filter="safehtml"/>
             
        <field name="color1" type="color"         
             label="COM_EVENTSHANDLER_FORM_LBL_SPECIAL_COLOR_1"

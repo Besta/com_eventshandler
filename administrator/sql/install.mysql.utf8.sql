@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `#__eventshandler_events` (
 `name` VARCHAR(255)  NOT NULL ,
 `alias` VARCHAR(255)  NOT NULL ,
 `description` TEXT NOT NULL ,
-`date` DATE NOT NULL ,
+`date` VARCHAR(15) NOT NULL ,
 `start_time` VARCHAR(128)  NOT NULL ,
 `end_time` VARCHAR(128)  NOT NULL ,
 `image` TEXT  NOT NULL ,

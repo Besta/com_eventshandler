@@ -44,21 +44,23 @@ JLoader::register("EventshandlerHelperRoute", $helperDir . DIRECTORY_SEPARATOR .
 		if($event->place_id!="" && $event->place_id!=null)
 			$place=EventshandlerHelper::getPlace($event->place_id);
 		?>
-			<div class="event" style="background-image: url('<?php echo $event->big_image;?>'); background-color: <?php echo $color1; ?>;">
+			<div class="event" style="background-image: url('<?php echo $event->big_image;?>');">
 				<div class="bottomBar" style="background-color: <?php echo $color1; ?>;color: <?php echo $color2; ?>">
-					<h3 class="name"><?php echo $event->name; ?></h3><br>
+					<h3 style="color: <?php echo $color2; ?>" class="name"><?php echo $event->name; ?></h3><br>
 					<?php if($place){?>
-						<span class="place"><?php echo $place->name; ?></span>
+						<span style="color: <?php echo $color2; ?>"  class="place"><?php echo $place->name; ?></span>
 					<?php }?>
-					<span class="date"><?php echo $event->date; ?></span>
+					<span style="color: <?php echo $color2; ?>" class="date"><?php echo $event->date; ?></span>
 				</div>
 			</div>
 		<?php } ?>
 		</div>
 	</div>
-	<div class="slideCircles">
-		<?php $i=0; foreach ($this->items as $event){	?>
-			<span class="slideCircle" id="<?php echo $i?>"></span>
-		<?php $i++; }?>
-	</div>
+	<?php if(count($this->items)>1){?>
+		<div class="slideCircles">
+			<?php $i=0; foreach ($this->items as $event){	?>
+				<span class="slideCircle" id="<?php echo $i?>"></span>
+			<?php $i++; }?>
+		</div>
+	<?php } ?>
 <?php }?>

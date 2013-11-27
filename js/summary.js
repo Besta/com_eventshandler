@@ -1,4 +1,5 @@
 jQuery(document).ready(function() {
+		
 	var count=jQuery('#slideEvents #events .event').length;
 	var c=1;
 	var left=0;
@@ -6,6 +7,7 @@ jQuery(document).ready(function() {
 	var eventWidth=jQuery('#slideEvents #events .event').width()+4;
 	jQuery('.slideCircles #0').addClass("active");
 
+	
 	jQuery('.slideCircle').click(function(){
 		left=-eventWidth*jQuery(this).attr('id');
 		jQuery('#slideEvents #events').animate({"left":left});
@@ -19,7 +21,7 @@ jQuery(document).ready(function() {
 
 	});
 	
-	var w=jQuery('.bottomBar .name').width();
+	w=jQuery('.bottomBar .name').width();
 	var h=jQuery('.bottomBar .name').height();
 	
 	w=(jQuery('.bottomBar').width()-w)/2;
@@ -32,6 +34,8 @@ jQuery(document).ready(function() {
 	jQuery('.bottomBar .place').css('bottom',h+m+"px");
 	jQuery('.bottomBar .date').css('bottom',h+m+"px");
 	
-	timer=window.setInterval("jQuery('.slideCircle#"+c+"').trigger('click')",5000);
+	
+	if(count>1)
+		timer=window.setInterval("jQuery('.slideCircle#"+c+"').trigger('click')",5000);
 
 });

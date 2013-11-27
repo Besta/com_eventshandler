@@ -9,8 +9,7 @@
 }
 
 .event_vert{
-	height: 568px;
-	margin: 1.5%;
+	margin: 1.52%;
 	width: 30%;
 	display: inline-block;
 	padding: inherit;
@@ -28,20 +27,19 @@
 
 
 .event_vert .image{
-	height:300px;
 	width: 100%;
 	background-size: 100%;
 	background-repeat:no-repeat;
 }
 
 .event .logo{
-	height:40px;
-	margin:5px;
+	height:15%;
+	margin:2%;
 	float:left;
 }
 .event_vert .logo{
-	height:40px;
-	margin:5px;
+	height:15%;
+	margin:2%;
 }
 
 .event .title{
@@ -102,6 +100,10 @@
 	text-align:center;
 	height:60px;
 	display: inline-block;
+}
+
+.event_vert .social{
+	width:100%;
 }
 
 .social a{

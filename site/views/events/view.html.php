@@ -74,6 +74,13 @@ class EventshandlerViewEvents extends JViewLegacy
 		$this->document->addStyleSheet('media/'.$this->option.'/css/eventshandler.css');
 		$this->document->addStyleSheet('media/'.$this->option.'/css/events.css');
 		
+		$document = JFactory::getDocument();
+		JHtml::_('bootstrap.framework'); //load jQuery
+		
+		// Add script
+		$this->document->addScript('media/'.$this->option.'/js/events.js');
+		
+		
 		// Because the application sets a default page title,
 		// we need to get it from the menu item itself
 		$menu = $menus->getActive();

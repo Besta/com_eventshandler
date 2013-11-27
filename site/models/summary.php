@@ -21,24 +21,40 @@ class EventshandlerModelSummary extends JModelLegacy {
 	protected $items=array();
 	
 	public function getItems(){
+		$app                = JFactory::getApplication();
+		$params       = $app->getParams('com_eventshandler');
+		$specials_id=$params->get('specials_id');
+		
 		$db = JFactory::getDbo();
     	$query = $db->getQuery(true);
     	$query
     	->select('id')
     	->from('#__eventshandler_specials');
+    	$where='id=""';
+    	$withoutSpecial=false;
+    	foreach ($specials_id as $id){
+    		if($id==0)
+    			$withoutSpecial=true;
+    		$where.=' OR id='.$id;
+    	}
+    	$query->where($where);
+    	
     	$db->setQuery($query);
     	$specialsId=$db->loadColumn();
-
-    	$query = $db->getQuery(true);
-    	$query
-    	->select('*')
-    	->from('#__eventshandler_events')
-    	->where('special_id=""')
-    	->order('date');
-    	 
-    	$db->setQuery($query);
-    	$this->items[]=$db->loadObject();
     	
+    	
+		if($withoutSpecial){
+	    	$query = $db->getQuery(true);
+	    	$query
+	    	->select('*')
+	    	->from('#__eventshandler_events')
+	    	->where('special_id=""')
+	    	->order('date');
+	    	 
+	    	$db->setQuery($query);
+	    	$this->items[]=$db->loadObject();
+		}
+		
     	foreach ($specialsId as $id)
     	{
     		$query = $db->getQuery(true);

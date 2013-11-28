@@ -49,7 +49,7 @@ class EventshandlerModelSummary extends JModelLegacy {
 	    	->select('*')
 	    	->from('#__eventshandler_events')
 	    	->where('special_id=""')
-	    	->order('date');
+	    	->order('date DESC');
 	    	 
 	    	$db->setQuery($query);
 	    	$this->items[]=$db->loadObject();
@@ -62,7 +62,7 @@ class EventshandlerModelSummary extends JModelLegacy {
     		->select('*')
     		->from('#__eventshandler_events')
     		->where('special_id='.$id)
-    		->order('date');
+    		->order('date DESC');
     		$db->setQuery($query);
     		$this->items[]=$db->loadObject();
     	}

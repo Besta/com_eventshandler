@@ -25,30 +25,29 @@
 }
 
 #slideEvents .event .bottomBar{
-	height: 20%;
 	width: 100%;
 	position: relative;
-	top: 320px;
 	opacity: 0.8;
 }
 
 .bottomBar .name{
 	display: inline-block;
-	max-width: 90%;
+	width: 100%;
+	text-align: center;
+	margin:0;
+
 }
 
 .bottomBar .place{
 	display: inline-block;
 	float:left;
 	position:relative;
-	margin:1%;
 }
 
 .bottomBar .date{
 	display: inline-block;
 	float:right;
 	position:relative;
-	margin:1%;
 }
 
 .slideCircles{
@@ -76,16 +75,10 @@
 	#slideEvents{
 		height: 300px;
 	}
-	#slideEvents .event .bottomBar{
-		top: 240px;
-	}
 }
 
 @media (max-width: 480px) {
    #slideEvents{
 		height: 200px;
-	}
-	#slideEvents .event .bottomBar{
-		top: 160px;
 	}
 }

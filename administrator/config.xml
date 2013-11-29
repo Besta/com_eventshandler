@@ -24,8 +24,8 @@
 	</fieldset>
 
 	<fieldset name="events"
-		description="COM_EVENTS_HANDLER_JCONFIG_EVENT_DESC"
-		label="COM_EVENTS_HANDLER_JCONFIG_EVENT_LABEL">
+		description="COM_EVENTSHANDLER_JCONFIG_EVENT_DESC"
+		label="COM_EVENTSHANDLER_JCONFIG_EVENT_LABEL">
         
         <field name="color1" 
             type="color" 
@@ -66,6 +66,19 @@
 
 	</fieldset>
 
+	<fieldset addfieldpath="/administrator/components/com_eventshandler/models/fields"
+            name="summary"
+            label="COM_EVENTSHANDLER_JCONFIG_SUMMARY_LABEL"
+            description="COM_EVENTSHANDLER_JCONFIG_SUMMARY_DESC">
+            <field
+                name="specials_id"
+                type="specialcheck"
+                label="COM_EVENTSHANDLER_LBL_SELECT_SPECIALS"
+                require="true"
+                description="COM_EVENTSHANDLER_DESC_SELECT_SPECIALS">
+            </field>
+    </fieldset>
+	
 	<fieldset name="permissions"
 		description="JCONFIG_PERMISSIONS_DESC"
 		label="JCONFIG_PERMISSIONS_LABEL"

@@ -22,7 +22,7 @@ class EventshandlerModelSummary extends JModelLegacy {
 	
 	public function getItems(){
 		$app                = JFactory::getApplication();
-		$params       = $app->getParams('com_eventshandler');
+		$params = $app->getParams('com_eventshandler');
 		$specials_id=$params->get('specials_id');
 		
 		$db = JFactory::getDbo();

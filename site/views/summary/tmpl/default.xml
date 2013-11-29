@@ -5,17 +5,4 @@
                         <![CDATA[COM_EVENTSHANDLER_TITLE_ITEM_VIEW_SUMMARY_DESC]]>
         </message>
     </layout>
-    <fields  name="params">
-        <fieldset addfieldpath="/components/com_eventshandler/models/fields"
-            name="basic"
-            label="COM_EVENTSHANDLER_FIELDSET_SPECIALS_ID_SELECT_LABEL">
-            <field
-                name="specials_id"
-                type="specialcheck"
-                label="COM_EVENTSHANDLER_SPECIALS_ID_SELECT_LABEL"
-                require="true"
-                description="COM_EVENTSHANDLER_SPECIALS_ID_SELECT_DESC">
-            </field>
-        </fieldset>
-    </fields>
 </metadata>

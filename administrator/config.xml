@@ -13,16 +13,22 @@
                  <option value="0">JHIDE</option>
                  <option value="1">JSHOW</option>
          </field>
-         
-        <field name="languages" 
-            type="language" 
-            client="site" 
-            default="en-GB" 
-            label="COM_EVENTSHANDLER_LBL_SELECT_LANGUAGE" 
-            description="COM_EVENTSHANDLER_DESC_SELECT_LANGUAGE" />
        
 	</fieldset>
 
+	<fieldset addfieldpath="/administrator/components/com_eventshandler/models/fields"
+            name="summary"
+            label="COM_EVENTSHANDLER_JCONFIG_SUMMARY_LABEL"
+            description="COM_EVENTSHANDLER_JCONFIG_SUMMARY_DESC">
+            <field
+                name="specials_id"
+                type="specialcheck"
+                label="COM_EVENTSHANDLER_LBL_SELECT_SPECIALS"
+                require="true"
+                description="COM_EVENTSHANDLER_DESC_SELECT_SPECIALS">
+            </field>
+    </fieldset>
+	
 	<fieldset name="events"
 		description="COM_EVENTSHANDLER_JCONFIG_EVENT_DESC"
 		label="COM_EVENTSHANDLER_JCONFIG_EVENT_LABEL">
@@ -66,18 +72,6 @@
 
 	</fieldset>
 
-	<fieldset addfieldpath="/administrator/components/com_eventshandler/models/fields"
-            name="summary"
-            label="COM_EVENTSHANDLER_JCONFIG_SUMMARY_LABEL"
-            description="COM_EVENTSHANDLER_JCONFIG_SUMMARY_DESC">
-            <field
-                name="specials_id"
-                type="specialcheck"
-                label="COM_EVENTSHANDLER_LBL_SELECT_SPECIALS"
-                require="true"
-                description="COM_EVENTSHANDLER_DESC_SELECT_SPECIALS">
-            </field>
-    </fieldset>
 	
 	<fieldset name="permissions"
 		description="JCONFIG_PERMISSIONS_DESC"

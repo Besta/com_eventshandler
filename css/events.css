@@ -43,9 +43,9 @@
 
 
 .event_vert .image{
-	width: 100%;
 	background-size: 100%;
 	background-repeat:no-repeat;
+	background-position: center;
 }
 
 .event .logo{
